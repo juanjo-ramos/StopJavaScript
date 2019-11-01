@@ -1,5 +1,5 @@
 # StopJavaScript
-This project doesn't aim to kill JavaScript (well, hold on :thinking_face:) but tries to stop the execution of some JS code ruinning in a `JSContext`. Situation:
+This project doesn't aim to kill JavaScript (well, hold on 🤔) but tries to stop the execution of some JS code ruinning in a `JSContext`. Situation:
 * You have some JS code you want to run.
 * That code takes a significant amount of time to run.
 * The user can cancel the operation at any time.
