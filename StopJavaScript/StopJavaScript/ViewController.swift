@@ -14,11 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     
-    private var context: JSContext? = JSContext()
-    private var item: DispatchWorkItem?
+    private let javaScriptContext = CustomJSContext()
     
     override func viewDidLoad() {
-        JSGlobalContextRelease(context?.jsGlobalContextRef)
         super.viewDidLoad()
     }
 
@@ -29,31 +27,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
-        cancelWorkItem()
-        discardContext()
+        javaScriptContext.kill()
     }
     
     private func runJavaScript(code: String) {
-        let item = DispatchWorkItem { [weak self] in
-            let value = self?.context?.evaluateScript(code)
-            value?.call(withArguments: [])
-            DispatchQueue.main.async {
+        DispatchQueue.global().async { [weak self] in
+            self?.javaScriptContext.evaluateScript(code)
+            
+            DispatchQueue.main.async { [weak self] in
                 self?.startButton.isEnabled = true
             }
         }
-        DispatchQueue.global().async(execute: item)
-        self.item = item
-    }
-    
-    private func cancelWorkItem() {
-        item?.cancel()
-        item = nil
-    }
-    
-    private func discardContext() {
-        guard let context = context else { return }
-        JSGlobalContextRelease(context.jsGlobalContextRef)
-        let a = JSVirtualMachine().remo
     }
 }
 
