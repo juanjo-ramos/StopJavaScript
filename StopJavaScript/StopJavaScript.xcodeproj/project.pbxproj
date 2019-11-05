@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814296D22372005100CBCBCB /* WKWebViewJSCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814296D12372005100CBCBCB /* WKWebViewJSCore.swift */; };
 		81BF9E01236F641700E968B8 /* CustomJSContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 81BF9DFF236F641700E968B8 /* CustomJSContext.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		81BF9E03236F642A00E968B8 /* CustomJavaScriptCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BF9E02236F642A00E968B8 /* CustomJavaScriptCore.swift */; };
 		81F677C3236B55BC00F7DF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F677C2236B55BC00F7DF3B /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		814296D12372005100CBCBCB /* WKWebViewJSCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewJSCore.swift; sourceTree = "<group>"; };
 		81BF9DFF236F641700E968B8 /* CustomJSContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomJSContext.m; sourceTree = "<group>"; };
 		81BF9E00236F641700E968B8 /* CustomJSContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomJSContext.h; sourceTree = "<group>"; };
 		81BF9E02236F642A00E968B8 /* CustomJavaScriptCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomJavaScriptCore.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 				81BF9E00236F641700E968B8 /* CustomJSContext.h */,
 				81BF9DFF236F641700E968B8 /* CustomJSContext.m */,
 				81BF9E02236F642A00E968B8 /* CustomJavaScriptCore.swift */,
+				814296D12372005100CBCBCB /* WKWebViewJSCore.swift */,
 			);
 			path = "JavaScript Engines";
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BF9E01236F641700E968B8 /* CustomJSContext.m in Sources */,
+				814296D22372005100CBCBCB /* WKWebViewJSCore.swift in Sources */,
 				81F677C7236B55BC00F7DF3B /* ViewController.swift in Sources */,
 				81F677C3236B55BC00F7DF3B /* AppDelegate.swift in Sources */,
 				81BF9E03236F642A00E968B8 /* CustomJavaScriptCore.swift in Sources */,

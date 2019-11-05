@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet private weak var startButton: UIButton!
     @IBOutlet private weak var cancelButton: UIButton!
     
-    private let javaScriptContext = CustomJSContext()
+//    private let javaScriptContext = CustomJSContext()
+    private let javaScriptContext: CustomJSContextProtocol = WKWebViewJSCore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
