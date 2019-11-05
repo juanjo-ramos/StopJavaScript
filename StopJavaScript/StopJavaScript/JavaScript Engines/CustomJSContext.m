@@ -17,8 +17,9 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        JSContextGroupRef contextGroup = JSContextGroupCreate();
-        _context = JSGlobalContextCreateInGroup(contextGroup, NULL);
+        _contextGroup = JSContextGroupCreate();
+        _context = JSGlobalContextCreateInGroup(_contextGroup, NULL);
+        JSContextGroupRetain(_contextGroup);
         JSGlobalContextRetain(_context);
     }
     
@@ -41,6 +42,7 @@
 - (void)kill
 {
     JSGlobalContextRelease(_context);
+    JSContextGroupRelease(_contextGroup);
 }
 
 @end

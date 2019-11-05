@@ -17,6 +17,7 @@
 @end
 
 @interface CustomJSContext : NSObject<CustomJSContextProtocol>  {
+    JSContextGroupRef _contextGroup;
     JSGlobalContextRef _context;
 }
 
