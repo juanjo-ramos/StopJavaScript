@@ -10,4 +10,6 @@ This project is targetting iOS 13.1.
 Just open & run it. The different attemps I'm trying are in `ViewController.swift`.
 
 ## Wait, but does this work or not?
-It **does not**. Next think I'm trying to do is to have an Obj-C class with ARC disabled and use the C API from JavaScriptCore to see if releasing the Global Context stops the execuition. Stay tuned.
+~It does not.~
+
+It does now. After some experimentation, it turns out that if you have a `WKWebView` evaluating certain JS code, you can terminate that execution by `nil`'ing the WKWebView object. See [WKWebViewJSCore](https://github.com/juanjo-ramos/StopJavaScript/blob/master/StopJavaScript/StopJavaScript/JavaScript%20Engines/WKWebViewJSCore.swift) for more details.
